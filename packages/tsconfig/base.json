@@ -17,7 +17,9 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true
   },
+  "include": ["../../reset.d.ts"],
   "exclude": ["node_modules"]
 }

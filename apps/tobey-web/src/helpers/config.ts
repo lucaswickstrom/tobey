@@ -1,0 +1,6 @@
+export const SUPABASE_URL = 'https://bwdxzbxyjnpexvebpfdi.supabase.co';
+export const SUPABASE_ANON_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3ZHh6Ynh5am5wZXh2ZWJwZmRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk2NTMwNDEsImV4cCI6MTk5NTIyOTA0MX0.z61Eohlojiex5g2w0AgYiY39YHQLVW3pLk8duQbcbNg';
+// const SUPABASE_URL = 'https://temqbrdouscfgwydywla.supabase.co';
+// const SUPABASE_ANON_KEY =
+//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlbXFicmRvdXNjZmd3eWR5d2xhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODcyNDA2OTAsImV4cCI6MjAwMjgxNjY5MH0.TIAuE_5SAgO70ZBzsnqVIBg9QvxMGI6ntN479q8HfKQ';

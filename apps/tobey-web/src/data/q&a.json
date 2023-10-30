@@ -1,0 +1,127 @@
+[
+  {
+    "title": "Vad är Tobey?",
+    "answer": "Tobey är en tjänst som tillgängliggör HLL Hyreslandslagets maskiner och verktyg. Du behöver ha ett kundkonto hos HLL för att kunna hyra maskiner och använda skåpet.\n\nTobeys tjänst är gratis för dig som användare.",
+    "show": true
+  },
+  {
+    "title": "Vad behöver jag för att använda Tobeys boxar?",
+    "answer": "För att använda någon av Tobeys boxar behehöver du ett konto hos HLL Hyreslandslaget, samt vara upplagd för att hyra på kontot.\nDu behöver också ladda ner Tobeys app och ha ditt Bluetooth aktiverat.",
+    "show": true
+  },
+  {
+    "title": "Vad innebär att man ska Koppla HLL-kontot med Tobey?",
+    "answer": "Du som är kund på HLL Hyreslandslaget behöver koppla ditt konto från HLL-Hyreslandslaget med Tobey i syfte att kunna hyra genom boxen. Detta för att vi ska kunna veta att du som kund har rätt att hyra från HLL Hyreslandslaget.",
+    "show": true
+  },
+  {
+    "title": "Hur lång tid tar det innan jag kan använda tjänsten?",
+    "answer": "Om du är upplagd som godkänd kund att hyra maskiner hos HLL Hyreslandslaget kan du börja använda tjänsten direkt.",
+    "show": true
+  },
+  {
+    "title": "Vem kan använda Tobey?",
+    "answer": "Alla som idag kan hyra av HLL Hyreslandslaget kan använda Tobeys smarta boxar och tjänster.",
+    "show": true
+  },
+  {
+    "title": "Hur blir jag kund på HLL Hyreslandslaget?",
+    "answer": "Klicka på länken nedan och följ instruktionerna på HLL Hyreslandslagets hemsida: https://www.egreement.com/services/forms/hll/kontoansokan-foretag"
+  },
+  {
+    "title": "Vad händer om jag inte får någon verifiering bekräftelse från HLL Hyreslandslaget?",
+    "answer": "Kontakta HLL Hyreslandslaget på telefonnummer eller mejl:\n\nHögdalen: [08-449 22 20](tel:084492220), hogdalen@hllab.se\nNacka: [08-449 22 90](tel:084492290), nacka@hllab.se\nTäby: [08-442 90 30](tel:084429030), taby@hllab.se"
+  },
+  {
+    "title": "Kan jag hyra maskiner som privatperson?",
+    "answer": "Ja, om du är kund till HLL Hyreslandslaget kommer du kunna hyra maskiner. Däremot kan du inte bli kund till HLL Hyreslandslaget som privatperson online utan vi hänvisar dig till närmsta HLL Hyreslandslaget-depå för att bli kund."
+  },
+  {
+    "title": "Var kan jag ladda ner Tobey-appen?",
+    "answer": "Du kan ladda ner Tobey-appen helt kostnadsfritt från Google Play på Android, eller via App Store för iOS."
+  },
+  {
+    "title": "Hur kommer jag i kontakt med Tobey:s kundtjänst?",
+    "answer": "Via hej@tobey.io. Vid frågor om maskiner hänvisar vi till HLL Hyreslandslaget."
+  },
+  {
+    "title": "Kan jag avbryta order?",
+    "answer": "Ja, du kan avbryta din order så länge maskinen ligger kvar i skåpet. Annars får du boka en retur av din maskin."
+  },
+  {
+    "title": "Varför måste jag ansöka om att bli kund till HLL Hyreslandslaget för att hyra ett verktyg i Tobeys boxar?",
+    "answer": "Du behöver ansöka om att bli kund för att Tobey samarbetar med HLL Hyreslandslaget då det är deras maskiner som du hyr."
+  },
+  {
+    "title": "Kommer jag kunna returnera maskiner som jag inte har hämtat från Tobeys boxar?",
+    "answer": "Ja, du kommer att kunna returnera samtliga maskiner och tillbehör du har hyrt från HLL Hyreslandslaget och som passar i våra boxar, givet att det finns ett ledigt fack. Skriv in individnummer för maskinen under förfarandet retur för att se möjligheten."
+  },
+  {
+    "title": "Hur hittar jag till mitt valda skåp?",
+    "answer": "Du kan hitta någon av Tobeys boxar via kartan."
+  },
+  {
+    "title": "Vart hittar jag mitt närmaste skåp och hur länge har det öppet?",
+    "answer": "Du hittar Tobey boxar via kartan med information om öppettider."
+  },
+  {
+    "title": "Var finns ni?",
+    "answer": "Vi finns hos utvalda Optimerabutiker, mer information finns via kartan i appen."
+  },
+  {
+    "title": "Kan jag byta leveransplats?",
+    "answer": "Avbryt order och boka en ny maskin till den nya platsen."
+  },
+  {
+    "title": "När påbörjas och avslutas hyresperioden?",
+    "answer": "Hyran påbörjas när du hämtar ut maskinen från en vald Tobey box. Hyrtiden avslutas när du lämnar tillbaka maskinen, och HLL Hyreslandslaget hämtar sedan upp maskinen och funktionskontrollera den. Du faktureras sedan för hyrtid och övriga avgifter enligt avtal med HLL Hyreslandslaget."
+  },
+  {
+    "title": "Hur sker betalning av hyran?",
+    "answer": "Du kommer att bli fakturerad av HLL Hyreslandslaget. Läs mer på länken här: https://www.hyreslandslaget.se/villkor/"
+  },
+  {
+    "title": "Hur länge kan jag hyra en maskin?",
+    "answer": "Du kan hyra maskiner så länge du behöver den. Du kommer att bli fakturerad av HLL Hyreslandslaget. Läs mer på länken här: https://www.hyreslandslaget.se/villkor/"
+  },
+  {
+    "title": "Kan jag använda min hyrda maskin direkt?",
+    "answer": "Ja, om maskinen finns på plats och är tillgänglig för bokning i Tobeys box kommer du kunna hämta ut den direkt."
+  },
+  {
+    "title": "Finns det instruktioner om användning av maskiner?",
+    "answer": "Under varje produktkort finns det mer information och manual för maskinen."
+  },
+  {
+    "title": "Hur gör jag om maskinen slutar fungera under hyresperioden?",
+    "answer": "Ta kontakt med HLL Hyreslandslaget.\n\nHögdalen: 08-449 22 20, hogdalen@hllab.se\nNacka: 08-449 22 90, nacka@hllab.se\nTäby: 08-442 90 30, taby@hllab.se"
+  },
+  {
+    "title": "Vad gör jag om jag skadar maskinen under hyresperioden?",
+    "answer": "Ta kontakt med HLL Hyreslandslaget.\n\nHögdalen: 08-449 22 20, hogdalen@hllab.se\nNacka: 08-449 22 90, nacka@hllab.se\nTäby: 08-442 90 30, taby@hllab.se"
+  },
+  {
+    "title": "Krävs det en deposition?",
+    "answer": "Nej, så länge du är kund hos HLL Hyreslandslaget krävs ingen deposition."
+  },
+  {
+    "title": "Hur lång tid har jag på mig att hämta ut maskinen som finns i Tobey Boxen?",
+    "answer": "När maskinen finns i Tobey boxen har du 4 timmar på dig att hämta ut den, annars avbokas den och blir tillgänglig för alla att kunna bokas."
+  },
+  {
+    "title": "Kan jag boka maskinen och boka ett visst datum?",
+    "answer": "Ja, ring HLL Hyreslandslaget så kommer de att se till att maskinen befinner sig boxen på rätt utsagd dag.\n\nHögdalen: [08-449 22 20](tel:084492220), hogdalen@hllab.se\nNacka: [08-449 22 90](tel:084492290), nacka@hllab.se\nTäby: [08-442 90 30](tel:084429030), taby@hllab.se"
+  },
+  {
+    "title": "Behöver jag informera någon om att jag vill returnera en maskin?",
+    "answer": "Nej, du behöver enbart boka upp ett fack i box genom Tobeys app."
+  },
+  {
+    "title": "Vad gör jag om luckan till Tobey Boxen inte öppnas?",
+    "answer": "Om du har problem med att öppna luckorna till Tobeys boxar - kontakta oss på Tobey, alternativt prata med personalen i Optimerabutiken."
+  },
+  {
+    "title": "Vad gör jag om jag har glömt att returnera något (t.ex tillbehör, sladdar)?",
+    "answer": "Boka ett nytt fack på samma sätt som tidigare, eller kontakta Tobey."
+  }
+]

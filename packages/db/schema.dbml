@@ -1,0 +1,218 @@
+Enum role {
+  admin
+  manager
+  customer
+}
+
+Enum bookingStatus {
+  pending
+  ongoing
+  completed
+}
+
+Enum bookingType {
+  retrieve
+  return
+}
+
+Enum articleType {
+  rentalEquipment
+  rentalAccessory
+  salesItem
+}
+
+Enum identificationStatus {
+  pending
+  failed
+  completed
+}
+
+Enum accountType {
+  organization
+  personal
+}
+
+Enum paymentStatus {
+  pending
+  failed
+  succeeded
+}
+
+Table profiles {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  createdAt timestamptz [not null, default: `now()`]
+  role role
+  accountType accountType
+  customerNumber text
+  customerName text
+  firstName text
+  lastName text
+  approvedAt timestamptz
+}
+
+Table bleProtocols {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  name text [not null]
+  serviceUUID text [not null]
+  characteristicReadUUID text [not null]
+  characteristicWriteUUID text [not null]
+}
+
+Table bleLogs {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  createdAt timestamptz [not null, default: `now()`]
+  boxId uuid [not null, ref: > boxes.id]
+  slotBookingId uuid [ref: > slotBookings.id]
+  profileId uuid [not null, ref: > profiles.id]
+  command text [not null]
+  message text [not null]
+  response text [not null]
+}
+
+Table boxGroups {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  name text [not null]
+
+  siteId uuid [not null, ref: > sites.id]
+}
+
+Table boxes {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  name text [not null]
+  macAddress text [not null]
+  length int [not null]
+  width int [not null]
+  height int [not null]
+
+  boxGroupId uuid [not null, ref: > boxGroups.id]
+  bleProtocolId uuid [not null, ref: > bleProtocols.id]
+}
+
+Table slots {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  name text [not null]
+  slotNo int [not null]
+  x int [not null]
+  y int [not null]
+  length int [not null]
+  width int [not null]
+  height int [not null]
+
+  boxId uuid [not null, ref: > boxes.id]
+}
+
+Table sites {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  name text [not null]
+  address text [not null]
+  location geometry [not null]
+  hllStatusId int
+  disabled boolean
+  openingHours text
+  url text [not null]
+  directions text [not null]
+}
+
+Table articles {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  type articleType [not null, default: 'rentalEquipment']
+  name text [not null]
+  categoryName text
+
+  sra text
+  brand text
+  model text
+  slug text
+
+  length int
+  width int
+  height int
+
+  hllManufacturerModelId text
+  hllFleetModelId text
+
+  preferredCount int [not null]
+  price int [not null]
+}
+
+Table packages {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  name text [not null]
+}
+
+Table articlesPackages {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  articleId uuid [not null, ref: > articles.id]
+  packageId uuid [not null, ref: > packages.id]
+}
+
+Table bookings {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  createdAt timestamptz [not null, default: `now()`]
+  status "bookingStatus" [not null]
+  hllOrderNumber text
+}
+
+Table slotBookings {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  createdAt timestamptz [not null, default: `now()`]
+  status "bookingStatus" [not null]
+  type "bookingType" [not null]
+  slotId uuid [not null, ref: > slots.id]
+  bookingId uuid [ref: > bookings.id]
+}
+
+Table slotBookingsReferences {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  createdAt timestamptz [not null, default: `now()`]
+  name text [not null]
+  references "text[]"
+
+  slotBookingId uuid [not null, ref: > slotBookings.id]
+  articleId uuid [ref: > articles.id]
+}
+
+Table bookingAccesses {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  createdAt timestamptz [not null, default: `now()`]
+
+  bookingId uuid [not null, ref: > bookings.id]
+  profileId uuid [not null, ref: > profiles.id]
+}
+
+Table identifications {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  status identificationStatus [not null]
+  createdAt timestamptz [not null, default: `now()`]
+  updatedAt timestamptz [not null, default: `now()`]
+  personalNumber text
+}
+
+Table articleImages {
+  name text [pk, not null]
+  articleId uuid [not null, ref: > articles.id]
+}
+
+Table hllArticles {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  fleetModelId text
+  manufacturerModelId text
+
+  articleId uuid [ref: > articles.id]
+}
+
+Table creditReports {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  createdAt timestamptz [not null, default: `now()`]
+  raw text [not null]
+
+  profileId uuid [not null, ref: > profiles.id]
+}
+
+Table payments {
+  id uuid [pk, not null, default: `uuid_generate_v4()`]
+  createdAt timestamptz [not null, default: `now()`]
+  status paymentStatus [not null]
+
+  bookingId uuid [unique, not null, ref: - bookings.id]
+}

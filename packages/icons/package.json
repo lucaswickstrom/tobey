@@ -1,0 +1,34 @@
+{
+  "name": "@tobey/icons",
+  "private": true,
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "typecheck": "tsc --noEmit",
+    "dev": "chokidar \"**/*.svg\" -c \"pnpm build\"",
+    "build": "pnpm build:base && pnpm build:web && pnpm build:native && pnpm lint --fix",
+    "build:base": "svgr --out-dir src --jsx-runtime automatic --typescript --template template.js -- svg",
+    "build:web": "svgr --out-dir src --jsx-runtime automatic --typescript --ext web.tsx -- svg",
+    "build:native": "svgr --out-dir src --jsx-runtime automatic --typescript --ext native.tsx --native -- svg"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "react-native-svg": "^13.14.0"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^7.0.0",
+    "@types/react": "^18.2.5",
+    "chokidar-cli": "^3.0.0",
+    "eslint-config-custom": "workspace:*",
+    "react": "^18.2.0",
+    "tailwind-config": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.1.6"
+  }
+}
