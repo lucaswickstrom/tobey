@@ -44,6 +44,7 @@ export { default as MagnifyingGlassRegularWeb } from "./MagnifyingGlassRegular.w
 export { default as MapLocationDotRegularWeb } from "./MapLocationDotRegular.web";
 export { default as MessageQuestionRegularWeb } from "./MessageQuestionRegular.web";
 export { default as OptimeraLogoWeb } from "./OptimeraLogo.web";
+export { default as PaperPlaneTopRegularWeb } from "./PaperPlaneTopRegular.web";
 export { default as PhoneRegularWeb } from "./PhoneRegular.web";
 export { default as PinDropSymbolWeb } from "./PinDropSymbol.web";
 export { default as PinWeb } from "./Pin.web";
@@ -56,6 +57,7 @@ export { default as RouteRegularWeb } from "./RouteRegular.web";
 export { default as SeWeb } from "./Se.web";
 export { default as SearchCheckSymbolWeb } from "./SearchCheckSymbol.web";
 export { default as ShelvesRegularWeb } from "./ShelvesRegular.web";
+export { default as SpinnerThirdDuotoneWeb } from "./SpinnerThirdDuotone.web";
 export { default as SquareArrowUpRightRegularWeb } from "./SquareArrowUpRightRegular.web";
 export { default as TableRegularWeb } from "./TableRegular.web";
 export { default as TobeyCharLogoWeb } from "./TobeyCharLogo.web";

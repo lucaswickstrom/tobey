@@ -44,6 +44,7 @@ export { default as MagnifyingGlassRegularNative } from "./MagnifyingGlassRegula
 export { default as MapLocationDotRegularNative } from "./MapLocationDotRegular.native";
 export { default as MessageQuestionRegularNative } from "./MessageQuestionRegular.native";
 export { default as OptimeraLogoNative } from "./OptimeraLogo.native";
+export { default as PaperPlaneTopRegularNative } from "./PaperPlaneTopRegular.native";
 export { default as PhoneRegularNative } from "./PhoneRegular.native";
 export { default as PinDropSymbolNative } from "./PinDropSymbol.native";
 export { default as PinNative } from "./Pin.native";
@@ -56,6 +57,7 @@ export { default as RouteRegularNative } from "./RouteRegular.native";
 export { default as SeNative } from "./Se.native";
 export { default as SearchCheckSymbolNative } from "./SearchCheckSymbol.native";
 export { default as ShelvesRegularNative } from "./ShelvesRegular.native";
+export { default as SpinnerThirdDuotoneNative } from "./SpinnerThirdDuotone.native";
 export { default as SquareArrowUpRightRegularNative } from "./SquareArrowUpRightRegular.native";
 export { default as TableRegularNative } from "./TableRegular.native";
 export { default as TobeyCharLogoNative } from "./TobeyCharLogo.native";
