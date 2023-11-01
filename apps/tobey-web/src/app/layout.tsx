@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 
+import { Analytics } from "@vercel/analytics/react";
 import { Open_Sans as OpenSans, Nunito } from "next/font/google";
 import type { ReactNode } from "react";
 import { cn } from "@/helpers/cn";
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="sv"
     >
       <body>{children}</body>
+      <Analytics />
     </html>
   );
 }

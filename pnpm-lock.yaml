@@ -50,6 +50,9 @@ importers:
       '@tobey/icons':
         specifier: workspace:*
         version: link:../../packages/icons
+      '@vercel/analytics':
+        specifier: ^1.1.1
+        version: 1.1.1
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -3441,6 +3444,12 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
+
+  /@vercel/analytics@1.1.1:
+    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
+    dependencies:
+      server-only: 0.0.1
+    dev: false
 
   /@vercel/style-guide@5.0.1(eslint@8.52.0)(prettier@3.0.3)(typescript@5.2.2):
     resolution: {integrity: sha512-3J/5xpwJ2Wk+cKB3EGY2KCdVQycaThLKhjBmgXPfIKb+E74lPpXVIDfaQE0D2JoAyIzGsqdH7Lbmr+DojwofxQ==}
@@ -8089,6 +8098,10 @@ packages:
       send: 0.18.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
     dev: false
 
   /set-blocking@2.0.0:
