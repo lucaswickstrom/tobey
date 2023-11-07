@@ -21,6 +21,14 @@ type Create<
 > = Omit<z.infer<TSchema>, TDefaults> &
   Partial<Pick<z.infer<TSchema>, TDefaults>>;
 
+type Upsert<
+  TSchema extends z.AnyZodObject,
+  TDefaults extends keyof z.TypeOf<TSchema>,
+  TPrimaryKey extends keyof z.TypeOf<TSchema>,
+> = Omit<z.infer<TSchema>, TDefaults> &
+  Create<TSchema, TDefaults> &
+  Pick<z.infer<TSchema>, TPrimaryKey>;
+
 type Select<
   TSchemas extends Schemas,
   TKey extends keyof TSchemas,
@@ -356,10 +364,21 @@ export function createPostgrestProxy<TSchemas extends Schemas>(
         data: Partial<z.infer<TSchemas[TKey]["schema"]>>,
         id: string
       ) => Promise<z.infer<TSchemas[TKey]["schema"]>>;
-      upsert: (
-        data: z.infer<TSchemas[TKey]["schema"]>
-      ) => Promise<z.infer<TSchemas[TKey]["schema"]>>;
-      // upsert<TData extends z.infer<TSchemas[TKey]['schema']>>(data: TData): Promise<TData>;
+      upsert: <
+        TData extends SingleOrArray<
+          Upsert<
+            TSchemas[TKey]["schema"],
+            TSchemas[TKey]["defaults"][number],
+            TSchemas[TKey]["primaryKey"]
+          >
+        >,
+      >(
+        data: TData
+      ) => Promise<
+        TData extends unknown[]
+          ? z.infer<TSchemas[TKey]["schema"]>[]
+          : z.infer<TSchemas[TKey]["schema"]>
+      >;
     } & Rpc<TSchemas>;
   };
 
@@ -465,9 +484,44 @@ export function createPostgrestProxy<TSchemas extends Schemas>(
     },
     async upsert(data) {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- comment
-      const parsedData = schemas[key]!.schema.parse(data);
-      await supabaseClient.from(key).upsert(parsedData);
-      return parsedData;
+      const { schema, defaults, primaryKey } = schemas[key]!;
+      const _defaults = defaults.filter(
+        (defaultKey) => defaultKey !== primaryKey
+      );
+      const defaultsObj = Object.fromEntries(
+        _defaults.map((defaultKey) => [defaultKey, true])
+      ) as Record<string, true>;
+      const zSchema = schema
+        .pick(defaultsObj)
+        .partial()
+        .and(schema.omit(defaultsObj));
+
+      if (Array.isArray(data)) {
+        const parsedData = z.array(zSchema).parse(data);
+        const response = await supabaseClient
+          .from(key)
+          .upsert(parsedData)
+          .select("*");
+        if (response.error) {
+          // eslint-disable-next-line @typescript-eslint/no-throw-literal -- comment
+          throw response.error;
+        }
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return -- comment
+        return response.data;
+      }
+
+      const parsedData = zSchema.parse(data);
+      const response = await supabaseClient
+        .from(key)
+        .upsert(parsedData)
+        .select("*")
+        .single();
+      if (response.error) {
+        // eslint-disable-next-line @typescript-eslint/no-throw-literal -- comment
+        throw response.error;
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return -- comment
+      return response.data;
     },
   }));
 }
