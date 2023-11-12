@@ -19,6 +19,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           openingHours: true,
           location: true,
           url: true,
+          status: true,
         },
         where: { id: { eq: siteId } },
       },
@@ -127,17 +128,24 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </Button>
         </div>
         <div className="w-full border-t bg-white">
-          {/* <div className="container grid grid-cols-[200px_minmax(900px,_1fr)_100px]"> */}
-          <div className="container px-0">
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))]">
-              {articles.map((article) => (
-                <div className="border-b" key={article.id}>
-                  <BookingCard article={article} />
-                </div>
-              ))}
+          {site.status === "active" ? (
+            <div className="container px-0">
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))]">
+                {articles.map((article) => (
+                  <div className="border-b" key={article.id}>
+                    <BookingCard article={article} />
+                  </div>
+                ))}
+              </div>
+              <div className="-mt-[1px] w-full border-b" />
             </div>
-            <div className="-mt-[1px] w-full border-b" />
-          </div>
+          ) : (
+            <div className="container px-0 flex flex-col items-center">
+              <div className="bg-slate-100 px-4 py-4 rounded my-4 max-w-[32rem] w-full">
+                Den här platsen aktiveras snart.
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>

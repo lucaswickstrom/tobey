@@ -9,7 +9,7 @@ import { getMapStyle } from "@/helpers/getMapStyle";
 
 export function Map({ style, ...props }: MapProps) {
   const mapStyle = useMemo(
-    () => getMapStyle([520535602, 115732315, 120314342]),
+    () => getMapStyle([520535602, 115732315, 120314342, 207760547, 493146958]),
     []
   );
 

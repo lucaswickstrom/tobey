@@ -48,7 +48,7 @@ export default async function Page() {
       openingHours: true,
       location: true,
     },
-    where: { disabled: { not: { is: true } } },
+    where: { status: { not: { eq: "disabled" } } },
   });
 
   return (
