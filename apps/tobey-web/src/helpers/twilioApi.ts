@@ -19,6 +19,8 @@ export const sendSms = async (to: string, body: string) => {
     }).toString(),
   });
   if (!response.ok) {
+    // eslint-disable-next-line no-console -- TODO: use logger
+    console.error(await response.text());
     throw new Error("Failed to send SMS");
   }
 };
