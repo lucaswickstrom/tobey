@@ -6,6 +6,8 @@ import { MapRotateCamera } from "@/components/MapRotateCamera";
 import { MapSiteMarker } from "@/components/MapSiteMarker";
 import { postgrestClient } from "@/helpers/api";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const siteId = params.slug;
 
