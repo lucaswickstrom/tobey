@@ -1,5 +1,5 @@
-const TWILIO_ACCOUNT_SID = "AC73613709036ef01af13dc3f6b042e8c4";
-const TWILIO_AUTH_TOKEN = "859288e32bcd7d515af7b92bcbe63ab9";
+const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
+const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
 const BASIC = btoa(`${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}`);
 const From = "Tobey";
 
